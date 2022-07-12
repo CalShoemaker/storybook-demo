@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import Button from './button.component';
 import Header from './header.component';
 import Page from './page.component';
+import BehrButtonComponent from './behr-button.component';
 
 export default {
   title: 'Example/Page',
@@ -15,7 +16,7 @@ export default {
   },
   decorators: [
     moduleMetadata({
-      declarations: [Button, Header],
+      declarations: [BehrButtonComponent, Button, Header],
       imports: [CommonModule],
     }),
   ],
