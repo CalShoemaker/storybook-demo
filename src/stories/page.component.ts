@@ -3,7 +3,7 @@ import { User } from './User';
 
 @Component({
   selector: 'storybook-page',
-  templateUrl: 'page.component.html',
+  templateUrl: './page.component.html',
   styleUrls: ['./page.css'],
 })
 export default class PageComponent {

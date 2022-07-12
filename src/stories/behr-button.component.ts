@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'behr-button',
-  templateUrl: 'behr-button.component.html',
+  templateUrl: './behr-button.component.html',
   styleUrls: ['./behr-button.css'],
 })
 export default class BehrButtonComponent {

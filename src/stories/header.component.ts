@@ -3,7 +3,7 @@ import { User } from './User';
 
 @Component({
   selector: 'storybook-header',
-  templateUrl: 'header.component.html',
+  templateUrl: './header.component.html',
   styleUrls: ['./header.css'],
 })
 export default class HeaderComponent {
