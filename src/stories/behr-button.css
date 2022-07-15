@@ -74,6 +74,8 @@
 }
 
 .behr-button--small {
+    min-width: auto;
+    min-height: auto;
     font-size: 12px;
     padding: 10px 16px;
 }
@@ -84,6 +86,8 @@
 }
 
 .behr-button--large {
+    min-width: 200px;
+    min-height: 55px;
     font-size: 16px;
     padding: 12px 24px;
 }

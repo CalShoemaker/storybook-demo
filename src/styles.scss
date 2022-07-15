@@ -1,1 +1,298 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import '../../external-links/bootstrap/bootstrap.min.css'; */
+
+/* Global Variables */
+:root {
+    /* Breakpoints */
+    --behr-breakpoint-tablet: 768px;
+    --behr-breakpoint-desktop-small: 992px;
+    --behr-breakpoint-desktop-large: 1200px;
+    --behr-breakpoint-desktop-xlarge: 1920px;
+
+    /* Colors */
+    --behr-navy-primary: #465058;
+    --behr-navy-medium: #373E44;
+    --behr-navy-dark: #282C2F;
+    --behr-black: #212529;
+    --behr-beige: #F6F5F0;
+    --behr-grey-light: #D8D8D8;
+    --behr-grey-medium: #8A8A8A;
+    --behr-grey-dark: #6B6B6B;
+    --behr-red-primary: #BD483C;
+    --behr-red-medium: #943A2A;
+    --behr-red-dark: #783A2A;
+    --behr-input-default-border: #CED4DA;
+    --behr-input-focus-border: #465058;
+
+    /* Fonts */
+    --behr-heading-font: 'Alternate Gothic No2 D', sans-serif;
+    --behr-body-and-label-font: 'Proxima Nova', sans-serif;
+    --behr-body-and-label-font--bold: 'Proxima Nova Bold', sans-serif;
+
+    /* Global Padding */
+    --behr-mobile-padding: 10px 30px;
+}
+
+/* Set base size for REM */
+html {
+    font-size: 16px;
+}
+
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* font families */
+@font-face { font-family: 'Alternate Gothic No2 D'; src:url("../font/Alternate Gothic No2 D Regular.ttf") format('opentype'); } 
+@font-face { font-family: 'Proxima Nova Bold'; src: url("../font/Proxima Nova Alt Bold.otf")format('opentype'); }
+@font-face { font-family: 'Proxima Nova'; src: url("../font/ProximaNova-Regular.otf")format('opentype'); }
+@font-face { font-family: 'proxima-nova-regular'; src: url("../font/ProximaNova-Regular.otf")format('opentype'); }
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--behr-navy-primary);
+    font-family: var(--behr-heading-font);
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+@keyframes fade-in-behr {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;	
+	}
+}
+
+.fade-in-behr {
+	animation: fade-in-behr .2s linear;
+}
+
+/* Font size for title */
+h1, .behr-pro-1 {
+    font-family: 'Trade Gothic Next LT Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: #212529;
+  }
+  h2, .behr-pro-2 {
+    font-family: 'Trade Gothic Next LT Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 52px;
+    text-transform: uppercase;
+    color: #212529;
+  }
+  h3, .behr-pro-3 {
+    font-family: 'Trade Gothic Next LT Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 42px;
+    text-transform: uppercase;
+    color: #212529;
+  }
+  h4, .behr-pro-4 {
+    font-family: 'Trade Gothic Next LT Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: #212529;
+  }
+  h5, .behr-pro-5 {
+    font-family: 'Trade Gothic Next LT Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #212529;
+  }
+
+  /* Fonts for paragraph/small text */
+  p, .behr-pro-text {
+    font-family: 'Trade Gothic Next LT Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #4E4E4E; 
+  }
+  .behr-pro-small-text {
+    font-family: 'Trade Gothic Next LT Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4E4E4E;
+  }
+  .behr-pro-dark-text {
+    font-family: 'Trade Gothic Next LT Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #212529;
+  }
+  .behr-pro-dark-text-2 {
+    font-family: 'Trade Gothic Next LT Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #212529;
+  }
+
+  /* Fonts for CTA and buttons */
+  .orange-pro-text {
+    font-family: 'Trade Gothic Next LT Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #C94F15 !important;
+  }
+  .orange-pro-text:hover {
+    color: #A13F11 !important;
+    text-decoration: none;
+  }
+  .anchor-primary {
+    border: 1px solid #465058;
+    border-radius: 40px;
+    padding: 10px 30px;
+    text-align: center;
+  }
+  .anchor-primary:hover {
+      background: #465058;
+      color: #fff;
+      cursor: pointer;
+  }
+  .orange-secondary-button {
+    font-family: 'Trade Gothic Next LT Pro';
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    background: #C94F15;
+    color: white !important;
+    padding: 10px 30px;
+  }
+  .orange-secondary-button:hover {
+    text-decoration: none;
+    cursor: pointer;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #C94F15;
+  }
+  .orange-primary-button {
+    background: #BD483C;
+    border: 1px solid #BD483C;;
+    text-align: center;
+    border-radius: 25px;
+    padding: 10px 30px;
+    border: 1px solid #BD483C;
+    color: #fff !important;
+  }
+  .orange-primary-button:hover {
+      background:  linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #C94F15;;
+      cursor: pointer;
+  }
+  .blue-primary-button {
+    background: #465058;
+    text-align: center;
+    border: 1px solid #465058;
+    color: #fff !important;
+    padding: 10px 30px;
+  }
+  .blue-primary-button:hover {
+      background: #212529;   
+      cursor: pointer;
+      text-decoration: none;
+  }
+  .blue-secondary-button {
+    background: #465058;
+    border: 1px solid #465058;;
+    text-align: center;
+    border-radius: 25px;
+    padding: 10px 30px;
+    border: 1px solid #465058;
+    color: #fff !important;
+  }
+  .blue-secondary-button:hover {
+    background: #212529;   
+    cursor: pointer;
+    text-decoration: none;
+}
+@media (max-width:991px) {
+  h1, .behr-pro-1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  h2, .behr-pro-2 {
+    font-size: 44px;
+    line-height: 52px;
+  }
+  h3, .behr-pro-3 {
+    font-size: 30px;
+    line-height: 42px;
+  }
+  h4, .behr-pro-4 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  h5, .behr-pro-5 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  /* Fonts for paragraph/small text */
+  p, .behr-pro-text {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .behr-pro-small-text {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .behr-pro-dark-text {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+  /* Fonts for CTA and buttons */
+  .behr-pro-orange-cta {
+    font-size: 14px;
+  }
+.behr-pro-orange-button {
+    font-size: 14px;
+  }
