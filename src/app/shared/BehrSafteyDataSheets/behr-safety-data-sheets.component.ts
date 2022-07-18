@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'behr-safety-data-sheets',
@@ -19,4 +19,14 @@ export default class BehrSafetyDataSheets {
   @Input()
   Subheader: string = 'Look up Safety Data Sheets for all BEHR® and KILZ® Paints and Primers.';
 
+  /**
+   * Placeholder text
+   */
+   @Input()
+   Placeholder: string = 'Search by product number';
+
+   @Output()
+   Search = new EventEmitter<Event>();
+
+   public search:string = '';
 }

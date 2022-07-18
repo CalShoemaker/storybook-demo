@@ -1,7 +1,9 @@
-<div>
-    <h3>{{ Header }}</h3>
-    <h5>{{ Subheader }}</h5>
-    <select>
-        <option>Select a Product Line</option>
-    </select>
+<div class="behr-widget">
+    <img src="../../assets/shield-check.png" class="behr-widget-badge" />
+    <h3 class="behr-pro-3">{{ Header }}</h3>
+    <p>{{ Subheader }}</p>
+    <div class="behr-widget-input">
+        <input type="text" placeholder="{{ Placeholder }}" [(ngModel)]="search" />
+        <button (click)="Search.emit(search);search=''">?</button>
+    </div>
 </div>

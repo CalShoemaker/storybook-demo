@@ -252,16 +252,16 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".behr-pro-3 {\n    font-size: 22px;\n    margin: 0;\n}\n\n.behr-widget {\n    padding: 20px;\n    text-align: center;\n}\n\n.behr-widget-badge {\n    max-width: 100px;\n    margin: 30px;\n}",
                     "styleUrl": "./behr-master-spec.component.css"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div>\n    <h3>{{ Header }}</h3>\n    <h5>{{ Subheader }}</h5>\n    <select>\n        <option>Select a Product Line</option>\n    </select>\n</div>"
+            "templateData": "<div class=\"behr-widget\">\n    <img src=\"../../assets/clipboard-pen.png\" class=\"behr-widget-badge\" />\n    <h3 class=\"behr-pro-3\">{{ Header }}</h3>\n    <p >{{ Subheader }}</p>\n    <a href=\"#\">Download PDF</a>\n</div>"
         },
         {
             "name": "BehrSafetyDataSheets",
-            "id": "component-BehrSafetyDataSheets-824579b8a990478cc58fe613de764de9c6bd9d8877072a47c8b9ba4bd223f2ec9bcf3924badc1d507c7b19f4c19d5288df327c8d9dba1f9a44c752b941aa707b",
+            "id": "component-BehrSafetyDataSheets-c0d471b6f2a808042b4c91a40f9dc9b74cce7f2f1d62e4ea97923b2989a6ba87e0ef7de8ed913c1cae1ff2ec46d61660c04c188e6d8123992723cdfd9245d58a",
             "file": "src/app/shared/BehrSafteyDataSheets/behr-safety-data-sheets.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -290,6 +290,17 @@
                     "decorators": []
                 },
                 {
+                    "name": "Placeholder",
+                    "defaultValue": "'Search by product number'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nPlaceholder text\n",
+                    "description": "<p>Placeholder text</p>\n",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "Subheader",
                     "defaultValue": "'Look up Safety Data Sheets for all BEHR® and KILZ® Paints and Primers.'",
                     "deprecated": false,
@@ -301,9 +312,43 @@
                     "decorators": []
                 }
             ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "outputsClass": [
+                {
+                    "name": "Search",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "search",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 31,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSearch",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -311,20 +356,20 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'behr-safety-data-sheets',\n    templateUrl: './behr-safety-data-sheets.component.html',\n    styleUrls: ['./behr-safety-data-sheets.component.css'],\n})\n\nexport default class BehrSafetyDataSheets {\n  /**\n   * Header mainline\n   */\n   @Input()\n   Header: string = 'Safety Data Sheets';\n \n  /**\n   * Header subline\n   */\n  @Input()\n  Subheader: string = 'Look up Safety Data Sheets for all BEHR® and KILZ® Paints and Primers.';\n\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n    selector: 'behr-safety-data-sheets',\n    templateUrl: './behr-safety-data-sheets.component.html',\n    styleUrls: ['./behr-safety-data-sheets.component.css'],\n})\n\nexport default class BehrSafetyDataSheets {\n  /**\n   * Header mainline\n   */\n   @Input()\n   Header: string = 'Safety Data Sheets';\n \n  /**\n   * Header subline\n   */\n  @Input()\n  Subheader: string = 'Look up Safety Data Sheets for all BEHR® and KILZ® Paints and Primers.';\n\n  /**\n   * Placeholder text\n   */\n   @Input()\n   Placeholder: string = 'Search by product number';\n\n   @Output()\n   Search = new EventEmitter<Event>();\n\n   public search:string = '';\n \n   onSearch() {\n     console.log(\"search\", this.search);\n   }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".behr-pro-3 {\n    font-size: 22px;\n    margin: 0;\n}\n\n.behr-widget {\n    padding: 20px;\n    text-align: center;\n}\n\n.behr-widget-badge {\n    max-width: 85px;\n    margin: 30px;\n}\n\n.behr-widget-input {\n    border-radius: 0;\n    width: 100%;\n    background:#F7F7F7;\n    border:1px solid #D8D8D8;\n    display: flex;\n}\n\n.behr-widget-input input {\n    border: none;\n    font-weight: 700;\n    background:#F7F7F7;\n    flex: 1 0 0;\n    padding: 10px;\n    text-transform: uppercase;\n}\n\n.behr-widget-input button {\n    cursor: pointer;\n    color: #C94F15;\n    border: 0;\n    background: none;\n    flex: 0 0 40px;\n}",
                     "styleUrl": "./behr-safety-data-sheets.component.css"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div>\n    <h3>{{ Header }}</h3>\n    <h5>{{ Subheader }}</h5>\n    <select>\n        <option>Select a Product Line</option>\n    </select>\n</div>"
+            "templateData": "<div class=\"behr-widget\">\n    <img src=\"../../assets/shield-check.png\" class=\"behr-widget-badge\" />\n    <h3 class=\"behr-pro-3\">{{ Header }}</h3>\n    <p>{{ Subheader }}</p>\n    <div class=\"behr-widget-input\">\n        <input type=\"text\" placeholder=\"{{ Placeholder }}\" [(ngModel)]=\"search\" />\n        <button (click)=\"Search.emit(search)\">?</button>\n    </div>\n</div>"
         },
         {
             "name": "BehrTechnicalDataSheets",
-            "id": "component-BehrTechnicalDataSheets-b53095c9ccc5eba9720a7f18222c0e63063ee834c27466883c808ffa0747842e8add496d8ef0dd75cdd53ddbf188f8e9b29f058774aa72f39859c5e6e7e6ae8a",
+            "id": "component-BehrTechnicalDataSheets-6295430a3a9027c2ad8026bbe857ff571232742566c1035eb00e3bc3b42d4aa377b1a51f9cd77306fdc040c9b8470f2f540b2b28352081d6d2a8de53ae74a405",
             "file": "src/app/shared/BehrTechnicalDataSheets/behr-technical-data-sheets.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -364,8 +409,31 @@
                     "decorators": []
                 }
             ],
-            "outputsClass": [],
-            "propertiesClass": [],
+            "outputsClass": [
+                {
+                    "name": "ddlChange",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "dataSheets",
+                    "defaultValue": "['Select a Product Line','Behr','Data','Test']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -374,20 +442,20 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'behr-technical-data-sheets',\n    templateUrl: './behr-technical-data-sheets.component.html',\n    styleUrls: ['./behr-technical-data-sheets.component.css'],\n})\n\nexport default class BehrTechnicalDataSheets {\n  /**\n   * Header mainline\n   */\n   @Input()\n   Header: string = 'Technical Data Sheets';\n \n  /**\n   * Header subline\n   */\n  @Input()\n  Subheader: string = 'View Technical Data Sheets for all BEHR and KILZ paints and primers';\n\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n    selector: 'behr-technical-data-sheets',\n    templateUrl: './behr-technical-data-sheets.component.html',\n    styleUrls: ['./behr-technical-data-sheets.component.css'],\n})\n\nexport default class BehrTechnicalDataSheets {\n  /**\n   * Header mainline\n   */\n   @Input()\n   Header: string = 'Technical Data Sheets';\n \n  /**\n   * Header subline\n   */\n  @Input()\n  Subheader: string = 'View Technical Data Sheets for all BEHR and KILZ paints and primers';\n\n  @Output()\n  ddlChange = new EventEmitter<Event>();\n\n  public dataSheets = ['Select a Product Line','Behr','Data','Test'];\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".behr-pro-3 {\n    font-size: 22px;\n    margin: 0;\n}\n\n.behr-widget {\n    padding: 20px;\n    text-align: center;\n}\n\n.behr-widget-badge {\n    max-width: 100px;\n    margin: 30px;\n}\n\n.behr-widget-ddl select {\n    border-radius: 0;\n    padding: 10px;\n    width: 100%;\n    background:#F7F7F7;\n    border:1px solid #D8D8D8;\n    appearance: none;\n    background-image: url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e\");\n    background-repeat: no-repeat;\n    background-position: right 10px center;\n    background-size: 1em;\n}",
                     "styleUrl": "./behr-technical-data-sheets.component.css"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div>\n    <h3>{{ Header }}</h3>\n    <h5>{{ Subheader }}</h5>\n    <select>\n        <option>Select a Product Line</option>\n    </select>\n</div>"
+            "templateData": "<div class=\"behr-widget\">\n    <img src=\"../../assets/clipboard-gear.png\" class=\"behr-widget-badge\"/>\n    <h3 class=\"behr-pro-3\">{{ Header }}</h3>\n    <p>{{ Subheader }}</p>\n    <div class=\"behr-widget-ddl\">\n        <select (change)=\"ddlChange.emit($event.target.value)\" >\n            <option *ngFor=\"let sheet of dataSheets\">{{ sheet }}</option>\n        </select>\n    </div>\n</div>"
         },
         {
             "name": "BehrTechnicalLibraryComponent",
-            "id": "component-BehrTechnicalLibraryComponent-5b388a3cbc379af78877ba9827799774c3222f99d2d2268fe5adc4b5e7d0c9e064aa81a5320e49f5145fc25ce6933397891b53a03b99130cf4bbd9023eba4882",
+            "id": "component-BehrTechnicalLibraryComponent-d2eefb3405c0fc415e6fe32679c0291e3c9574a9c417d67d1d0f6b9708ace6e5186657b5f80459cadc118448b9c4844fd9b778dbbb54d080f2f8a48e9e3b33b1",
             "file": "src/app/shared/BehrTechnicalLibrarySection/behr-technical-library-section.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -437,16 +505,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n    selector: 'behr-technical-library-section',\n    templateUrl: './behr-technical-library-section.component.html',\n    styleUrls: ['./behr-technical-library-section.component.css'],\n})\n\nexport default class BehrTechnicalLibraryComponent {\n  /**\n   * Header mainline\n   */\n   @Input()\n   Header: string = 'Behr Technical Library';\n \n  /**\n   * Header subline\n   */\n  @Input()\n  Subheader: string = 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.';\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'behr-technical-library-section',\n    templateUrl: './behr-technical-library-section.component.html',\n    styleUrls: ['./behr-technical-library-section.component.css'],\n})\n\nexport default class BehrTechnicalLibraryComponent {\n  /**\n   * Header mainline\n   */\n   @Input()\n   Header: string = 'Behr Technical Library';\n \n  /**\n   * Header subline\n   */\n  @Input()\n  Subheader: string = 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.';\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".comtainer {\n    max-width: 1190px !important;\n    margin-right: auto;\n    margin-left: auto;\n    padding-left: 0px;\n    padding-right: 0px;\n    width: 100%;\n    transition: all 1s ease-in 0s;\n}\n\n.threeColLayout {\n    position: relative;\n}\n\n.three-col {\n    display: flex;\n    justify-content: space-between;\n    flex-wrap: wrap;\n}\n\n.three-col__block {\n    flex: 0 1 calc(33%);\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n}",
+                    "data": "\n.container {\n    max-width: 1190px !important;\n    margin-right: auto;\n    margin-left: auto;\n    padding-left: 0px;\n    padding-right: 0px;\n    width: 100%;\n    transition: all 1s ease-in 0s;\n}\n\n.threeColLayout {\n    position: relative;\n}\n\n.three-col--heading {\n    width: 100%;\n    text-align: center;\n}\n\n.three-col--heading h2 {\n    font-size: 30px;\n    margin: 40px 0 5px;\n}\n\n.three-col--heading h6 {\n    max-width: 550px;\n    margin: 0 auto 60px;\n}\n\n.three-col {\n    display: flex;\n    justify-content: space-between;\n    flex-wrap: wrap;\n}\n\n.three-col__block {\n    flex: 0 1 calc(33% - 60px);\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    padding: 30px 30px 0;\n}\n.three-col__block:nth-child(3),\n.three-col__block:nth-child(4){\n    border-left: 1px solid #D8D8D8;\n}",
                     "styleUrl": "./behr-technical-library-section.component.css"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"threeColLayout\">\n    <div class=\"three-col-wrapper\">\n        <div class=\"container\">\n            <div class=\"three-col\">\n                <div class=\"three-col--heading\">\n                    <h1 class=\"behr-pro-1 wc-title\">{{ Header }}</h1>\n                    <h6 class=\"behr-pro-6\">{{ Subheader }}</h6>\n                </div>\n                <div class=\"three-col__block\">\n                    <behr-technical-data-sheets></behr-technical-data-sheets>\n                </div>\n                <div class=\"three-col__block\">\n                    <behr-safety-data-sheets></behr-safety-data-sheets>\n                </div>\n                <div class=\"three-col__block\">\n                    <behr-safety-data-sheets></behr-safety-data-sheets>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+            "templateData": "<div class=\"threeColLayout\">\n    <div class=\"three-col-wrapper\">\n        <div class=\"container\">\n            <div class=\"three-col\">\n                <div class=\"three-col--heading\">\n                    <h2 class=\"behr-pro-2\">{{ Header }}</h2>\n                    <h6 class=\"behr-pro-6\">{{ Subheader }}</h6>\n                </div>\n                <div class=\"three-col__block\">\n                    <behr-technical-data-sheets></behr-technical-data-sheets>\n                </div>\n                <div class=\"three-col__block\">\n                    <behr-safety-data-sheets></behr-safety-data-sheets>\n                </div>\n                <div class=\"three-col__block\">\n                    <behr-master-spec></behr-master-spec>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
         },
         {
             "name": "ButtonComponent",
@@ -735,13 +803,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-b0bb343999c0401a2e3ecbec65490c5a76866396b25cae82ed79702c1d4e115033ea8c8ade9395518e8eba42217f2ec5d6c7a62f3d969b3ab2838fe206d56a66",
+            "id": "module-AppModule-7948df304285ae1dec3aff69cd3b926d9077e7e05ba1921c1b93f340545648b3b43ef925ec9c2c80a2fa67c0eecbd52cc70a5ceaed360e23f14cc553a25aa6f0",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    FormsModule,\n    ReactiveFormsModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -854,7 +922,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Behr-technical-data-sheets.stories.ts",
+                "file": "src/stories/Behr-technical-library-section.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -864,7 +932,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Behr-technical-library-section.stories.ts",
+                "file": "src/stories/Behr-technical-data-sheets.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1033,16 +1101,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Behr-technical-data-sheets.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<BehrTechnicalDataSheets>",
-                "defaultValue": "(args: BehrTechnicalDataSheets) =>({\n  props: args\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Behr-technical-library-section.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1053,11 +1111,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/Behr-technical-data-sheets.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<BehrTechnicalDataSheets>",
+                "defaultValue": "(args: BehrTechnicalDataSheets) =>({\n  props: args\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Button>",
                 "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Behr-master-spec.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<BehrMasterSpec>",
+                "defaultValue": "(args: BehrMasterSpec) =>({\n  props: args\n})"
             },
             {
                 "name": "Template",
@@ -1078,16 +1156,6 @@
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Behr-master-spec.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<BehrMasterSpec>",
-                "defaultValue": "(args: BehrMasterSpec) =>({\n  props: args\n})"
             },
             {
                 "name": "Text",
@@ -1199,28 +1267,6 @@
                     "defaultValue": "(args: BehrSafetyDataSheets) =>({\n  props: args\n})"
                 }
             ],
-            "src/stories/Behr-technical-data-sheets.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Behr-technical-data-sheets.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Behr-technical-data-sheets.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<BehrTechnicalDataSheets>",
-                    "defaultValue": "(args: BehrTechnicalDataSheets) =>({\n  props: args\n})"
-                }
-            ],
             "src/stories/Behr-technical-library-section.stories.ts": [
                 {
                     "name": "Default",
@@ -1241,6 +1287,28 @@
                     "deprecationMessage": "",
                     "type": "Story<BehrTechnicalLibraryComponent>",
                     "defaultValue": "(args: BehrTechnicalLibraryComponent) => ({\n  props: args\n})"
+                }
+            ],
+            "src/stories/Behr-technical-data-sheets.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Behr-technical-data-sheets.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Behr-technical-data-sheets.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<BehrTechnicalDataSheets>",
+                    "defaultValue": "(args: BehrTechnicalDataSheets) =>({\n  props: args\n})"
                 }
             ],
             "src/stories/Behr-master-spec.stories.ts": [
@@ -1425,7 +1493,7 @@
         ]
     },
     "coverage": {
-        "count": 10,
+        "count": 9,
         "status": "low",
         "files": [
             {
@@ -1451,18 +1519,18 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "BehrSafetyDataSheets",
-                "coveragePercent": 66,
-                "coverageCount": "2/3",
-                "status": "good"
+                "coveragePercent": 42,
+                "coverageCount": "3/7",
+                "status": "medium"
             },
             {
                 "filePath": "src/app/shared/BehrTechnicalDataSheets/behr-technical-data-sheets.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "BehrTechnicalDataSheets",
-                "coveragePercent": 66,
-                "coverageCount": "2/3",
-                "status": "good"
+                "coveragePercent": 40,
+                "coverageCount": "2/5",
+                "status": "medium"
             },
             {
                 "filePath": "src/app/shared/BehrTechnicalLibrarySection/behr-technical-library-section.component.ts",

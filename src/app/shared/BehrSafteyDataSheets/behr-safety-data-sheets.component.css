@@ -1,0 +1,39 @@
+.behr-pro-3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.behr-widget {
+    padding: 20px;
+    text-align: center;
+}
+
+.behr-widget-badge {
+    max-width: 85px;
+    margin: 30px;
+}
+
+.behr-widget-input {
+    border-radius: 0;
+    width: 100%;
+    background:#fff;
+    border:1px solid #D8D8D8;
+    display: flex;
+}
+
+.behr-widget-input input {
+    border: none;
+    background:#fff;
+    flex: 1 0 0;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.behr-widget-input button {
+    cursor: pointer;
+    font-weight:700;
+    color: #C94F15;
+    border: 0;
+    background: none;
+    flex: 0 0 40px;
+}

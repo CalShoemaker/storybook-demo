@@ -1,0 +1,24 @@
+.behr-pro-3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.behr-widget {
+    padding: 20px;
+    text-align: center;
+}
+
+.behr-widget p {
+    line-height: 1.2em;
+}
+
+.behr-widget a[download]{
+    color:#C94F15;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.behr-widget-badge {
+    max-width: 100px;
+    margin: 30px;
+}
