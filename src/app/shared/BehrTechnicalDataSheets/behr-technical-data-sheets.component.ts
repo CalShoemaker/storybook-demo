@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'behr-technical-data-sheets',
@@ -18,5 +18,10 @@ export default class BehrTechnicalDataSheets {
    */
   @Input()
   Subheader: string = 'View Technical Data Sheets for all BEHR and KILZ paints and primers';
+
+  @Output()
+  ddlChange = new EventEmitter<Event>();
+
+  public dataSheets = ['Select a Product Line','Behr','Data','Test'];
 
 }

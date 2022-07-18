@@ -6,14 +6,18 @@ import BehrTechnicalDataSheets from 'src/app/shared/BehrTechnicalDataSheets/behr
 import BehrSafetyDataSheets from 'src/app/shared/BehrSafteyDataSheets/behr-safety-data-sheets.component';
 import BehrMasterSpec from 'src/app/shared/BehrMasterSpec/behr-master-spec.component';
 import BehrTechnicalLibraryComponent from 'src/app/shared/BehrTechnicalLibrarySection/behr-technical-library-section.component';
+import { FormsModule } from '@angular/forms';
 
 export default {
   title: 'Example/Behr Technical Library Section',
   component: BehrTechnicalLibraryComponent,
+  argTypes: {
+    dataSheets: { control:"select", options: ['Select a Product Line','Behr','Data','Test'] }
+  },
   decorators: [
     moduleMetadata({
       declarations: [BehrTechnicalDataSheets,BehrSafetyDataSheets,BehrMasterSpec],
-      imports: [CommonModule],
+      imports: [CommonModule,FormsModule],
     }),
   ],
   parameters: {

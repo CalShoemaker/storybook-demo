@@ -1,4 +1,5 @@
-.comtainer {
+
+.container {
     max-width: 1190px !important;
     margin-right: auto;
     margin-left: auto;
@@ -12,6 +13,21 @@
     position: relative;
 }
 
+.three-col--heading {
+    width: 100%;
+    text-align: center;
+}
+
+.three-col--heading h2 {
+    font-size: 30px;
+    margin: 40px 0 5px;
+}
+
+.three-col--heading h6 {
+    max-width: 550px;
+    margin: 0 auto 60px;
+}
+
 .three-col {
     display: flex;
     justify-content: space-between;
@@ -19,8 +35,13 @@
 }
 
 .three-col__block {
-    flex: 0 1 calc(33%);
+    flex: 0 1 calc(33% - 60px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: 30px 30px 0;
+}
+.three-col__block:nth-child(3),
+.three-col__block:nth-child(4){
+    border-left: 1px solid #D8D8D8;
 }

@@ -5,6 +5,9 @@ import BehrTechnicalDataSheets from 'src/app/shared/BehrTechnicalDataSheets/behr
 export default {
   title: 'Example/Behr Technical Data Sheets',
   component: BehrTechnicalDataSheets,
+  argTypes: {
+    dataSheets: { control:"select", options: ['Select a Product Line','Behr','Data','Test'] }
+  },
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/angular/configure/story-layout
     layout: 'fullscreen',

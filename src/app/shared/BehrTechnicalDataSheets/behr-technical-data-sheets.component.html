@@ -1,7 +1,10 @@
-<div>
-    <h3>{{ Header }}</h3>
-    <h5>{{ Subheader }}</h5>
-    <select>
-        <option>Select a Product Line</option>
-    </select>
+<div class="behr-widget">
+    <img src="../../assets/clipboard-gear.png" class="behr-widget-badge"/>
+    <h3 class="behr-pro-3">{{ Header }}</h3>
+    <p>{{ Subheader }}</p>
+    <div class="behr-widget-ddl">
+        <select (change)="ddlChange.emit($event.target.value)" >
+            <option *ngFor="let sheet of dataSheets">{{ sheet }}</option>
+        </select>
+    </div>
 </div>
